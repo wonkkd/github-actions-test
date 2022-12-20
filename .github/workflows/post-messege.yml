@@ -6,6 +6,7 @@ on:
       - main
     types:
       - opened
+      - synchronize
 
 permissions:
   pull-requests: write
@@ -21,8 +22,8 @@ jobs:
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+              owner: "wonkkd",
+              repo: "github-actions-test/pulls",
               body: [
                 "Hello World!",
                 `context.repo.owner: ${context.repo.owner}`,
