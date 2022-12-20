@@ -23,7 +23,7 @@ jobs:
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: "wonkkd",
-              repo: "github-actions-test/pulls",
+              repo: "github-actions-test",
               body: [
                 "Hello World!",
                 `context.repo.owner: ${context.repo.owner}`,
