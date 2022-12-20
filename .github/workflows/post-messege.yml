@@ -8,9 +8,6 @@ on:
       - opened
       - synchronize
 
-permissions:
-  pull-requests: write
-
 jobs:
   policy-comment:
     name: Pull Request Policy Comment
@@ -22,8 +19,8 @@ jobs:
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
-              owner: "wonkkd",
-              repo: "github-actions-test",
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               body: [
                 "Hello World!",
                 `context.repo.owner: ${context.repo.owner}`,
